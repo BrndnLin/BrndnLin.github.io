@@ -51,7 +51,7 @@
             border-bottom-color: var(--yale-blue-light);
         }
 
-        /* Introduction section with headshot - UPDATED */
+        /* Introduction section with headshot */
         .intro-section {
             display: grid;
             grid-template-columns: 350px 1fr;
@@ -259,6 +259,11 @@
             line-height: 1.5;
         }
 
+        /* Hide nav/footer while loading (prevents flash) */
+        nav:empty, footer:empty {
+            min-height: 70px;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -297,22 +302,20 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-brand">Brandon Lin</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="resume.html">Resume</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Navigation - Managed by shared-components.js -->
+    <nav aria-hidden="true">
+        <!-- FALLBACK: If JavaScript is disabled, this will show -->
+        <noscript>
+            <div class="nav-container">
+                <a href="index.html" class="nav-brand">Brandon Lin</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
             </div>
-        </div>
+        </noscript>
     </nav>
 
     <!-- Hero Section -->
@@ -425,45 +428,16 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Brandon Lin. Designed and developed with assistance from Claude AI (Anthropic).</p>
-        <p>Full interactive portfolio launching November 2025</p>
+    <!-- Footer - Managed by shared-components.js -->
+    <footer aria-hidden="true">
+        <!-- FALLBACK: If JavaScript is disabled, this will show -->
+        <noscript>
+            <p>&copy; 2025 Brandon Lin. Built from scratch with HTML & CSS.</p>
+            <p>Full interactive portfolio launching November 2025</p>
+        </noscript>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.compact-item').forEach(item => {
-            observer.observe(item);
-        });
-
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        if (navToggle) {
-            navToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        }
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
+    <!-- Shared Components - Loads nav, footer, animations, mobile menu -->
+    <script src="js/shared-components.js"></script>
 </body>
 </html>
