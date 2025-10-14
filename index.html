@@ -51,24 +51,28 @@
             border-bottom-color: var(--yale-blue-light);
         }
 
-        /* Introduction section with headshot */
+        /* Introduction section with headshot - UPDATED */
         .intro-section {
             display: grid;
-            grid-template-columns: 250px 1fr;
+            grid-template-columns: 350px 1fr;
             gap: 50px;
-            align-items: center;
+            align-items: start;
             margin-bottom: 80px;
+            min-height: calc(100vh - 280px);
+            padding-top: 60px;
         }
 
         .headshot-container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: sticky;
+            top: 120px;
         }
 
         .headshot {
-            width: 250px;
-            height: 250px;
+            width: 320px;
+            height: 320px;
             border-radius: 10px;
             background: linear-gradient(135deg, #00356b 0%, #286dc0 100%);
             border: 3px solid #286dc0;
@@ -79,13 +83,14 @@
             box-shadow: 0 4px 12px rgba(40, 109, 192, 0.3);
             object-fit: cover;
             object-position: center;
-            margin-top: 30px;
         }
 
         .bio-text {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-secondary);
+            display: flex;
+            align-items: center;
         }
 
         /* Featured project cards */
@@ -267,12 +272,22 @@
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 30px;
+                min-height: auto;
+                padding-top: 40px;
             }
 
             .headshot {
-                width: 200px;
-                height: 200px;
+                width: 250px;
+                height: 250px;
                 margin: 0 auto;
+            }
+
+            .headshot-container {
+                position: static;
+            }
+
+            .bio-text {
+                text-align: center;
             }
 
             .featured-cards {
@@ -290,13 +305,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="experience.html">Experience</a></li>
-                <li class="dropdown">
-                    <a href="resume.html" class="dropdown-toggle">Resume</a>
-                    <div class="dropdown-menu">
-                        <a href="resume.html">View Resume</a>
-                        <a href="Brandon%20Lin%20-%20Resume.pdf" download>Download PDF</a>
-                    </div>
-                </li>
+                <li><a href="resume.html">Resume</a></li>
             </ul>
             <div class="nav-toggle">
                 <span></span>
