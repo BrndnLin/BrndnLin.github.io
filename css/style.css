@@ -14,10 +14,10 @@
     --yale-blue: #00356b;
     --yale-blue-light: #286dc0;
     
-    /* Background Colors */
-    --bg-primary: #2A2A2B;
-    --bg-secondary: #1F1F1F;
-    --bg-card: #343435;
+    /* Background Colors - Updated to softer dark gray */
+    --bg-primary: #2F2F2F;
+    --bg-secondary: #242424;
+    --bg-card: #3A3A3A;
     
     /* Text Colors */
     --text-primary: #e5e5e5;
@@ -25,11 +25,11 @@
     --text-muted: #707070;
     
     /* Accent Colors */
-    --border-color: #2a2a2a;
-    --hover-bg: #202020;
+    --border-color: #404040;
+    --hover-bg: #353535;
     
     /* Timeline Colors */
-    --timeline-line: #2a2a2a;
+    --timeline-line: #404040;
     --timeline-dot: var(--yale-blue-light);
 }
 
@@ -56,7 +56,7 @@ nav {
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
-    background-color: rgba(21, 21, 21, 0.95);
+    background-color: rgba(36, 36, 36, 0.95);
 }
 
 .nav-container {
@@ -231,7 +231,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 300px); /* Adjust 300px based on your banner height */
+    min-height: calc(100vh - 300px);
 }
 
 /* ===================================
