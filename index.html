@@ -1,4 +1,13 @@
-/* Introduction section with headshot */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brandon Lin - Mechanical Engineering student at Yale University specializing in robotics and electromechanical systems">
+    <title>Brandon Lin | Mechanical Engineering Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Introduction section with headshot */
         .intro-section {
             display: grid;
             grid-template-columns: 200px 1fr;
@@ -52,27 +61,6 @@
             color: var(--text-secondary);
         }
 
-        @media (max-width: 768px) {
-            .intro-section {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 30px;
-            }
-
-            .headshot {
-                width: 180px;
-                height: 180px;
-                margin: 0 auto;
-            }
-        }<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Brandon Lin - Mechanical Engineering student at Yale University specializing in robotics and electromechanical systems">
-    <title>Brandon Lin | Mechanical Engineering Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
         /* Featured project cards */
         .featured-cards {
             display: grid;
@@ -240,6 +228,18 @@
         }
 
         @media (max-width: 768px) {
+            .intro-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .headshot {
+                width: 180px;
+                height: 180px;
+                margin: 0 auto;
+            }
+
             .featured-cards {
                 grid-template-columns: 1fr;
             }
@@ -275,7 +275,6 @@
     <section class="hero">
         <h1>Brandon Lin</h1>
         <p class="subtitle">Class of 2026 | Mechanical Engineering | Yale University</p>
-
     </section>
 
     <!-- Main Content -->
