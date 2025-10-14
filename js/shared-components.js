@@ -31,10 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
 
     const navElement = document.querySelector('nav');
-    if (navElement && !navElement.querySelector('.nav-container')) {
-        // Only inject if nav is empty (preserves fallback if JS fails)
-        navElement.innerHTML = navHTML;
-        navElement.removeAttribute('aria-hidden'); // Make visible after loading
+    if (navElement) {
+        // Check if nav is empty or only has noscript
+        const hasContent = navElement.querySelector('.nav-container');
+        if (!hasContent) {
+            navElement.innerHTML = navHTML;
+        }
+        // Always remove aria-hidden once script loads
+        navElement.removeAttribute('aria-hidden');
     }
 
     // ============================================
@@ -47,9 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
 
     const footerElement = document.querySelector('footer');
-    if (footerElement && footerElement.children.length === 0) {
-        // Only inject if footer is empty (preserves fallback)
-        footerElement.innerHTML = footerHTML;
+    if (footerElement) {
+        // Check if footer is empty or only has noscript
+        const hasContent = footerElement.querySelector('p:not(noscript p)');
+        if (!hasContent) {
+            footerElement.innerHTML = footerHTML;
+        }
+        // Always remove aria-hidden once script loads
         footerElement.removeAttribute('aria-hidden');
     }
 
