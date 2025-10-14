@@ -15,9 +15,9 @@
     --yale-blue-light: #286dc0;
     
     /* Background Colors */
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #151515;
-    --bg-card: #1a1a1a;
+    --bg-primary: #2A2A2B;
+    --bg-secondary: #1F1F1F;
+    --bg-card: #343435;
     
     /* Text Colors */
     --text-primary: #e5e5e5;
@@ -223,6 +223,15 @@ nav {
 .hero-links a:hover {
     color: var(--text-primary);
     border-bottom-color: var(--yale-blue-light);
+}
+
+/* Headshot positioning - centered between banner and bottom */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 300px); /* Adjust 300px based on your banner height */
 }
 
 /* ===================================
