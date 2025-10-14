@@ -6,6 +6,113 @@
     <meta name="description" content="Brandon Lin's engineering projects - robotics, autonomous systems, and mechanical design">
     <title>Projects | Brandon Lin</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional styles for project grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 40px 20px;
+        }
+
+        .project-card {
+            position: relative;
+            height: 350px;
+            background: linear-gradient(135deg, #00356b 0%, #001d3d 100%);
+            border: 2px solid #286dc0;
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            overflow: visible;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+            z-index: 10;
+        }
+
+        /* Expanding border effect */
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 3px solid #286dc0;
+            border-radius: 12px;
+            opacity: 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 30px rgba(40, 109, 192, 0.6),
+                        0 0 60px rgba(40, 109, 192, 0.4),
+                        inset 0 0 20px rgba(40, 109, 192, 0.2);
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 30px rgba(40, 109, 192, 0.6),
+                            0 0 60px rgba(40, 109, 192, 0.4),
+                            inset 0 0 20px rgba(40, 109, 192, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(40, 109, 192, 0.8),
+                            0 0 80px rgba(40, 109, 192, 0.6),
+                            inset 0 0 30px rgba(40, 109, 192, 0.3);
+            }
+        }
+
+        .project-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-card h3 {
+            color: #e5e5e5;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-card .card-tag {
+            color: #286dc0;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -20,7 +127,7 @@
                     <a href="resume.html" class="dropdown-toggle">Resume</a>
                     <div class="dropdown-menu">
                         <a href="resume.html">View Resume</a>
-                        <a href="resume.pdf" download>Download PDF</a>
+                        <a href="Brandon%20Lin%20-%20Resume.pdf" download>Download PDF</a>
                     </div>
                 </li>
             </ul>
@@ -36,287 +143,84 @@
     <div class="container">
         <h1 class="section-title">Projects</h1>
         <p class="intro-text">
-            A comprehensive showcase of my engineering projects spanning robotics, autonomous systems, 
-            mechanical design, and software development. Each project demonstrates hands-on experience 
-            with CAD, fabrication, programming, and system integration.
+            A showcase of my engineering projects spanning robotics, autonomous systems, 
+            mechanical design, and software development. Click any project to learn more.
         </p>
 
-        <div class="timeline">
-            <!-- Formula SAE BR25 -->
-            <div class="timeline-item">
-                <div class="timeline-year">2024 - 2025</div>
-                <div class="timeline-content">
-                    <h3>Formula SAE BR25 Electric Race Car</h3>
-                    <div class="timeline-subtitle">Powertrain & Cooling Lead | Co-President & Chief Mechanical Engineer</div>
-                    <p class="timeline-description">
-                        Led the complete design, analysis, and manufacturing of the powertrain, pedal box, and steering 
-                        subsystems for Yale's all-electric Formula SAE competition vehicle. As Co-President and Chief 
-                        Mechanical Engineer during the 2024-2025 season, oversaw 6x membership growth and directed 
-                        mechanical systems development across all subsystems.
-                    </p>
-                    <p class="timeline-description">
-                        Verified hand calculations for powertrain and pedal box designs using FEA simulations, analyzed 
-                        steering loads and gear ratio optimization in MATLAB, and fabricated components via manual machining, 
-                        waterjet cutting, and MIG welding. Currently leading implementation of the BR25's cooling system 
-                        and maintenance of the powertrain. Competed at FSAE competitions in Loudon, New Hampshire in 2023 and 2025.
-                    </p>
-                    <div class="timeline-skills">
-                        <span class="skill-tag">SolidWorks</span>
-                        <span class="skill-tag">FEA</span>
-                        <span class="skill-tag">MATLAB</span>
-                        <span class="skill-tag">Manual Machining</span>
-                        <span class="skill-tag">Waterjet</span>
-                        <span class="skill-tag">MIG Welding</span>
-                        <span class="skill-tag">Leadership</span>
-                    </div>
-                </div>
-            </div>
+        <div class="project-grid">
+            <!-- Formula SAE -->
+            <a href="projects/formula-sae.html" class="project-card">
+                <div class="project-icon">🏎️</div>
+                <h3>Formula SAE BR25</h3>
+                <p class="card-tag">Powertrain & Cooling Lead</p>
+            </a>
 
-            <!-- RoboSoft Morphing Limb -->
-            <div class="timeline-item">
-                <div class="timeline-year">2023 - 2024</div>
-                <div class="timeline-content">
-                    <h3>Morphing Robotic Limb for Amphibious Robot</h3>
-                    <div class="timeline-subtitle">Published at IEEE RoboSoft 2024 | Second Author</div>
-                    <p class="timeline-description">
-                        Designed an internal pneumatic actuator for an amphibious robotic limb that reduced morphing 
-                        energy by 99% and actuation pressure by 93% compared to previous designs. The improved iteration 
-                        featured a Kirigami layer jamming system with internal pneumatic actuator, achieving significant 
-                        improvements in hydrodynamics with a 53% reduction in profile thickness.
-                    </p>
-                    <p class="timeline-description">
-                        Characterized actuator performance through comprehensive Instron compression and three-point 
-                        bending tests across multiple actuation states. Processed experimental data in MATLAB to generate 
-                        figures for publication. Redesigned and 3D printed the robot's modular shell using SolidWorks 
-                        surface modeling to improve field serviceability.
-                    </p>
-                    <p class="timeline-description">
-                        <strong>Publication:</strong> J. Sun, B. Lin, et al., "Performance Enhancement of a Morphing Limb 
-                        for an Amphibious Robotic Turtle," IEEE RoboSoft 2024.
-                    </p>
-                    <div class="timeline-skills">
-                        <span class="skill-tag">SolidWorks</span>
-                        <span class="skill-tag">MATLAB</span>
-                        <span class="skill-tag">Instron Testing</span>
-                        <span class="skill-tag">3D Printing</span>
-                        <span class="skill-tag">Pneumatic Systems</span>
-                        <span class="skill-tag">Research</span>
-                    </div>
-                </div>
-            </div>
+            <!-- RoboSoft -->
+            <a href="projects/robosoft-limb.html" class="project-card">
+                <div class="project-icon">🤖</div>
+                <h3>Morphing Robotic Limb</h3>
+                <p class="card-tag">IEEE RoboSoft 2024</p>
+            </a>
 
-            <!-- YOLO Terrain Recognition -->
-            <div class="timeline-item">
-                <div class="timeline-year">2024 - 2025</div>
-                <div class="timeline-content">
-                    <h3>YOLO-Based Autonomous Terrain Recognition</h3>
-                    <div class="timeline-subtitle">Undergraduate Research Assistant | The Faboratory</div>
-                    <p class="timeline-description">
-                        Developed a YOLO-based image recognition system in ROS and Python to enable autonomous gait 
-                        transitions for a turtle-inspired amphibious robot through real-time terrain classification 
-                        and coverage percentage calculations. The system allows the robot to automatically adapt its 
-                        locomotion strategy based on the terrain it encounters.
-                    </p>
-                    <p class="timeline-description">
-                        Created an automated image labeling pipeline to generate YOLO-compatible training datasets by 
-                        segmenting and annotating terrain types from proprietary video frames. This pipeline significantly 
-                        accelerated the dataset preparation process and improved model training efficiency.
-                    </p>
-                    <div class="timeline-skills">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">ROS</span>
-                        <span class="skill-tag">YOLO</span>
-                        <span class="skill-tag">Computer Vision</span>
-                        <span class="skill-tag">Machine Learning</span>
-                    </div>
-                </div>
-            </div>
+            <!-- YOLO -->
+            <a href="projects/terrain-recognition.html" class="project-card">
+                <div class="project-icon">👁️</div>
+                <h3>Terrain Recognition</h3>
+                <p class="card-tag">YOLO Computer Vision</p>
+            </a>
 
             <!-- CubeSat -->
-            <div class="timeline-item">
-                <div class="timeline-year">2023</div>
-                <div class="timeline-content">
-                    <h3>CubeSat for Lunar Seismic Detection</h3>
-                    <div class="timeline-subtitle">MENG 185: Team-Based Design Project</div>
-                    <p class="timeline-description">
-                        Designed and constructed a to-scale CubeSat prototype intended to detect seismic activity on the 
-                        lunar surface. Led mechanical design and system integration efforts, coordinating electrical, 
-                        software, and structural subsystems into a functional prototype.
-                    </p>
-                    <p class="timeline-description">
-                        Designed complete CAD model in SolidWorks and machined precision components using manual mill and 
-                        lathe. 3D printed structural parts from engineering drawings. Constructed circuit integrating 
-                        Arduino Nano with Geophone sensor for seismic detection. Successfully implemented wireless data 
-                        transfer using Wixel Programmable USB Module, teaching myself the protocol under deadline pressure. 
-                        Coded a Python GUI for CubeSat control and data visualization.
-                    </p>
-                    <div class="timeline-skills">
-                        <span class="skill-tag">SolidWorks</span>
-                        <span class="skill-tag">Manual Machining</span>
-                        <span class="skill-tag">3D Printing</span>
-                        <span class="skill-tag">Arduino</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Circuit Design</span>
-                        <span class="skill-tag">Wireless Communication</span>
-                    </div>
-                </div>
-            </div>
+            <a href="projects/cubesat.html" class="project-card">
+                <div class="project-icon">🛰️</div>
+                <h3>CubeSat Design</h3>
+                <p class="card-tag">Seismic Detection</p>
+            </a>
 
-            <!-- MuJoCo Pick and Place -->
-            <div class="timeline-item">
-                <div class="timeline-year">2025</div>
-                <div class="timeline-content">
-                    <h3>Robotic Pick-and-Place Simulation</h3>
-                    <div class="timeline-subtitle">ENAS 772: Introduction to Embedded Robotic Systems</div>
-                    <p class="timeline-description">
-                        Implemented a complete pick-and-place manipulation system in MuJoCo physics simulator using a 
-                        Franka Emika Panda robot arm. Developed inverse kinematics solver, Jacobian-based velocity control, 
-                        and trajectory planning algorithms to enable smooth, collision-free motion planning.
-                    </p>
-                    <p class="timeline-description">
-                        The project demonstrated comprehensive understanding of robot kinematics, dynamics, and control 
-                        theory applied to a real-world manipulation task. Successfully integrated multiple control 
-                        strategies to achieve reliable object grasping and placement.
-                    </p>
-                    <div class="timeline-skills">
-                        <span class="skill-tag">MuJoCo</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Inverse Kinematics</span>
-                        <span class="skill-tag">Jacobian Control</span>
-                        <span class="skill-tag">Trajectory Planning</span>
-                    </div>
-                </div>
-            </div>
+            <!-- MuJoCo -->
+            <a href="projects/pick-and-place.html" class="project-card">
+                <div class="project-icon">🦾</div>
+                <h3>Pick-and-Place Simulation</h3>
+                <p class="card-tag">MuJoCo Robotics</p>
+            </a>
 
-            <!-- Guggenheim Shelf -->
-            <div class="timeline-item">
-                <div class="timeline-year">2025</div>
-                <div class="timeline-content">
-                    <h3>Guggenheim-Inspired Educational Shelf</h3>
-                    <div class="timeline-subtitle">ENAS 410: Making Spaces</div>
-                    <p class="timeline-description">
-                        Designed and fabricated an architectural shelf inspired by the Guggenheim Museum's iconic spiral 
-                        structure for the museum's education center. Project focused on translating the museum's design 
-                        language into a functional educational display system.
-                    </p>
-                    <p class="timeline-description">
-                        Emphasized spatial design principles, structural integrity, and user interaction while maintaining 
-                        the aesthetic coherence with the Guggenheim's architectural identity. Fabricated using combination 
-                        of woodworking and precision manufacturing techniques.
-                    </p>
-                    <div class="timeline-skills">
-                        <span class="skill-tag">Spatial Design</span>
-                        <span class="skill-tag">CAD</span>
-                        <span class="skill-tag">Fabrication</span>
-                        <span class="skill-tag">Woodworking</span>
-                    </div>
-                </div>
-            </div>
+            <!-- Guggenheim -->
+            <a href="projects/guggenheim-shelf.html" class="project-card">
+                <div class="project-icon">🏛️</div>
+                <h3>Guggenheim Shelf</h3>
+                <p class="card-tag">Spatial Design</p>
+            </a>
 
-            <!-- Solar Charging Station -->
-            <div class="timeline-item">
-                <div class="timeline-year">2023 - 2024</div>
-                <div class="timeline-content">
-                    <h3>Solar-Powered Charging Station</h3>
-                    <div class="timeline-subtitle">Yale Solar Charging Project</div>
-                    <p class="timeline-description">
-                        Fabricated a solar-powered charging station prototype with aluminum umbrella frame and integrated 
-                        battery storage system for deployment around Yale's campus. Worked as part of a renewable energies 
-                        team to create sustainable infrastructure for student device charging.
-                    </p>
-                    <p class="timeline-description">
-                        Designed structural frame to withstand outdoor conditions while providing adequate solar panel 
-                        orientation. Integrated electrical systems for solar collection, battery management, and USB 
-                        charging outputs. Completed functional prototype ready for campus deployment.
-                    </p>
-                    <div class="timeline-skills">
-                        <span class="skill-tag">CAD</span>
-                        <span class="skill-tag">Fabrication</span>
-                        <span class="skill-tag">Solar Systems</span>
-                        <span class="skill-tag">Electrical Integration</span>
-                    </div>
-                </div>
-            </div>
+            <!-- Solar -->
+            <a href="projects/solar-charging.html" class="project-card">
+                <div class="project-icon">☀️</div>
+                <h3>Solar Charging Station</h3>
+                <p class="card-tag">Renewable Energy</p>
+            </a>
 
-            <!-- Aerospace Projects -->
-            <div class="timeline-item">
-                <div class="timeline-year">2022 - 2023</div>
-                <div class="timeline-content">
-                    <h3>Rocketry & Aerospace Projects</h3>
-                    <div class="timeline-subtitle">Yale Undergraduate Aerospace Association</div>
-                    <p class="timeline-description">
-                        Contributed to multiple aerospace engineering projects including Project Liquid (liquid-fueled 
-                        rocket engine) and Tensegrity Project (novel structural systems). For Project Liquid, helped 
-                        construct the test stand including load cell implementation and structural bracket designs.
-                    </p>
-                    <p class="timeline-description">
-                        For the Tensegrity Project, designed and created a rudimentary prototype exploring tensegrity 
-                        structural principles. The final prototype successfully survived drop testing, validating the 
-                        structural concept. Currently active member of the Rocketry division.
-                    </p>
-                    <div class="timeline-skills">
-                        <span class="skill-tag">Structural Design</span>
-                        <span class="skill-tag">Test Stand Fabrication</span>
-                        <span class="skill-tag">CAD</span>
-                        <span class="skill-tag">Prototyping</span>
-                    </div>
-                </div>
-            </div>
+            <!-- Aerospace -->
+            <a href="projects/aerospace.html" class="project-card">
+                <div class="project-icon">🚀</div>
+                <h3>Rocketry & Aerospace</h3>
+                <p class="card-tag">YUAA Projects</p>
+            </a>
 
-            <!-- High School Research -->
-            <div class="timeline-item">
-                <div class="timeline-year">2022</div>
-                <div class="timeline-content">
-                    <h3>Novel 3D Printed Equipment for Drosophila Research</h3>
-                    <div class="timeline-subtitle">Independent Research | Regeneron Science Talent Search Scholar</div>
-                    <p class="timeline-description">
-                        Conducted independent research studying the combined effects of dietary restriction and exercise 
-                        on fruit fly (Drosophila melanogaster) health and longevity. Designed and fabricated custom 
-                        experimental equipment to enable novel testing protocols.
-                    </p>
-                    <p class="timeline-description">
-                        Created the Drosophila Rotation Device (DRD) based on commercially available machines, adapting 
-                        the design for specific experimental requirements. 3D printed a countercurrent apparatus to 
-                        generate quantitative metrics of fruit fly health and climbing ability. Research recognized as 
-                        Regeneron Science Talent Search Scholar.
-                    </p>
-                    <div class="timeline-skills">
-                        <span class="skill-tag">3D Printing</span>
-                        <span class="skill-tag">CAD</span>
-                        <span class="skill-tag">Research Design</span>
-                        <span class="skill-tag">Prototyping</span>
-                    </div>
-                </div>
-            </div>
+            <!-- Drosophila -->
+            <a href="projects/drosophila-research.html" class="project-card">
+                <div class="project-icon">🔬</div>
+                <h3>Drosophila Research</h3>
+                <p class="card-tag">Regeneron Scholar</p>
+            </a>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Brandon Lin. Built from scratch with HTML & CSS.</p>
+        <p>&copy; 2025 Brandon Lin. Designed and developed with assistance from Claude AI (Anthropic).</p>
         <p>Full interactive portfolio launching November 2025</p>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.timeline-item').forEach(item => {
-            observer.observe(item);
-        });
-
         // Mobile menu toggle
         const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
