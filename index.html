@@ -1,4 +1,46 @@
-<!DOCTYPE html>
+/* Hero section - compact */
+        .hero {
+            background: linear-gradient(135deg, var(--yale-blue) 0%, #001d3d 100%);
+            padding: 50px 20px 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--yale-blue-light);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .hero-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .hero-links a {
+            color: var(--yale-blue-light);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+        }
+
+        .hero-links a:hover {
+            color: var(--text-primary);
+            border-bottom-color: var(--yale-blue-light);
+        }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,13 +62,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
         }
 
         .headshot {
             width: 200px;
             height: 200px;
-            border-radius: 50%;
+            border-radius: 10px;
             background: linear-gradient(135deg, #00356b 0%, #286dc0 100%);
             border: 3px solid #286dc0;
             display: flex;
@@ -34,25 +75,8 @@
             justify-content: center;
             font-size: 4rem;
             box-shadow: 0 4px 12px rgba(40, 109, 192, 0.3);
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            text-align: center;
-        }
-
-        .contact-links a {
-            color: #286dc0;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .contact-links a:hover {
-            color: #4a8fd9;
+            object-fit: cover;
+            object-position: center;
         }
 
         .bio-text {
@@ -228,6 +252,14 @@
         }
 
         @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
             .intro-section {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -275,6 +307,10 @@
     <section class="hero">
         <h1>Brandon Lin</h1>
         <p class="subtitle">Class of 2026 | Mechanical Engineering | Yale University</p>
+        <div class="hero-links">
+            <a href="mailto:brandonlin5512@gmail.com">brandonlin5512@gmail.com</a>
+            <a href="https://www.linkedin.com/in/brandonlin04" target="_blank">LinkedIn</a>
+        </div>
     </section>
 
     <!-- Main Content -->
@@ -282,11 +318,7 @@
         <!-- Introduction with Headshot -->
         <div class="intro-section">
             <div class="headshot-container">
-                <img src="images/headshot.jpg" alt="Brandon Lin" class="headshot" style="object-fit: cover;">
-                <div class="contact-links">
-                    <a href="mailto:brandonlin5512@gmail.com">Email</a>
-                    <a href="https://www.linkedin.com/in/brandonlin04" target="_blank">LinkedIn</a>
-                </div>
+                <img src="images/headshot.jpg" alt="Brandon Lin" class="headshot">
             </div>
             <div class="bio-text">
                 <p>
