@@ -52,9 +52,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const footerElement = document.querySelector('footer');
     if (footerElement) {
-        // Check if footer is empty or only has noscript
-        const hasContent = footerElement.querySelector('p:not(noscript p)');
-        if (!hasContent) {
+        // Check if footer only has noscript (no real content yet)
+        const noscriptOnly = footerElement.querySelector('noscript') && 
+                           !footerElement.querySelector('p:not(noscript p)');
+        const isEmpty = footerElement.children.length === 0;
+        
+        if (isEmpty || noscriptOnly) {
             footerElement.innerHTML = footerHTML;
         }
         // Always remove aria-hidden once script loads
