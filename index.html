@@ -1,4 +1,13 @@
-/* Hero section - compact */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brandon Lin - Mechanical Engineering student at Yale University">
+    <title>Brandon Lin | Mechanical Engineering Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Hero section - compact */
         .hero {
             background: linear-gradient(135deg, var(--yale-blue) 0%, #001d3d 100%);
             padding: 50px 20px 40px;
@@ -40,21 +49,15 @@
         .hero-links a:hover {
             color: var(--text-primary);
             border-bottom-color: var(--yale-blue-light);
-        }<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Brandon Lin - Mechanical Engineering student at Yale University specializing in robotics and electromechanical systems">
-    <title>Brandon Lin | Mechanical Engineering Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
+        }
+
         /* Introduction section with headshot */
         .intro-section {
             display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 40px;
+            grid-template-columns: 250px 1fr;
+            gap: 50px;
             align-items: center;
+            margin-top: 60px;
             margin-bottom: 80px;
         }
 
@@ -65,15 +68,15 @@
         }
 
         .headshot {
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 250px;
             border-radius: 10px;
             background: linear-gradient(135deg, #00356b 0%, #286dc0 100%);
             border: 3px solid #286dc0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 5rem;
             box-shadow: 0 4px 12px rgba(40, 109, 192, 0.3);
             object-fit: cover;
             object-position: center;
@@ -267,8 +270,8 @@
             }
 
             .headshot {
-                width: 180px;
-                height: 180px;
+                width: 200px;
+                height: 200px;
                 margin: 0 auto;
             }
 
@@ -419,9 +422,8 @@
         <p>Full interactive portfolio launching November 2025</p>
     </footer>
 
-    <!-- JavaScript for scroll animations and mobile menu -->
+    <!-- JavaScript -->
     <script>
-        // Fade-in animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -435,12 +437,10 @@
             });
         }, observerOptions);
 
-        // Observe all timeline items
         document.querySelectorAll('.compact-item').forEach(item => {
             observer.observe(item);
         });
 
-        // Mobile menu toggle
         const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
 
@@ -450,7 +450,6 @@
             });
         }
 
-        // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
